@@ -28,40 +28,39 @@ public class addmember extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel10 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         namebox = new javax.swing.JTextField();
-        male = new javax.swing.JRadioButton();
-        female = new javax.swing.JRadioButton();
         agebox = new javax.swing.JTextField();
         phonebox = new javax.swing.JTextField();
         parentnbox = new javax.swing.JTextField();
         gradebox = new javax.swing.JComboBox<>();
         parentpnumbox = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        male = new javax.swing.JRadioButton();
+        female = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         addressbox = new javax.swing.JTextArea();
 
         jLabel10.setText("jLabel10");
 
-        jLabel2.setText("Name");
+        jTextField1.setText("jTextField1");
 
-        jLabel3.setText("Gender");
+        jLabel2.setText("Name");
 
         jLabel4.setText("Grade");
 
         jLabel5.setText("Age");
 
         jLabel6.setText("Phone number");
-
-        jLabel7.setText("Home address");
 
         jLabel8.setText("Parent's name");
 
@@ -82,7 +81,17 @@ public class addmember extends javax.swing.JInternalFrame {
             }
         });
 
-        male.setText("Male");
+        agebox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ageboxActionPerformed(evt);
+            }
+        });
+
+        gradebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a class", "Grade 6", "Grade 7", "Grade 8", "Grade 9", "Grade 10", "Grade 11", " " }));
+
+        jLabel1.setText("Gender");
+
+        male.setText("male");
         male.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 maleActionPerformed(evt);
@@ -96,13 +105,7 @@ public class addmember extends javax.swing.JInternalFrame {
             }
         });
 
-        agebox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ageboxActionPerformed(evt);
-            }
-        });
-
-        gradebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a class", "Grade 6", "Grade 7", "Grade 8", "Grade 9", "Grade 10", "Grade 11", " " }));
+        jLabel3.setText("Home address");
 
         addressbox.setColumns(20);
         addressbox.setRows(5);
@@ -115,35 +118,35 @@ public class addmember extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5)
                             .addComponent(jLabel11)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))
                         .addGap(64, 64, 64)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(parentnbox, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
                             .addComponent(phonebox, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
                             .addComponent(agebox, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(male)
-                                .addGap(69, 69, 69)
-                                .addComponent(female))
                             .addComponent(namebox)
                             .addComponent(gradebox, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(parentpnumbox)
-                            .addComponent(jScrollPane1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(210, 210, 210)
-                        .addComponent(jButton1)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(male)
+                                .addGap(59, 59, 59)
+                                .addComponent(female))
+                            .addComponent(jScrollPane1))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -155,9 +158,9 @@ public class addmember extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(namebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(jLabel1)
                     .addComponent(male)
                     .addComponent(female))
                 .addGap(18, 18, 18)
@@ -172,17 +175,18 @@ public class addmember extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
                     .addComponent(phonebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 8, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(parentnbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8)
+                    .addComponent(parentnbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
@@ -199,12 +203,11 @@ public class addmember extends javax.swing.JInternalFrame {
         String name=namebox.getText();
         String gender=null;
         if(male.isSelected()){
-            gender="Male is selected";
+            gender="Male";
         }
         if(female.isSelected()){
-            gender="Female is selected";
+            gender="Female";
         }
-        //System.out.println(selection);
         String age=agebox.getText();
         String grade=gradebox.getSelectedItem().toString();
         String phoneNumber=phonebox.getText();
@@ -212,9 +215,18 @@ public class addmember extends javax.swing.JInternalFrame {
         String parentName=parentnbox.getText();
         String parentPhoneNumber=parentpnumbox.getText();
         
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(grade);
+        System.out.println(phoneNumber);
+        System.out.println(parentName);
+        System.out.println(parentPhoneNumber);
+        
+        
         try{
-            String q="INSERT INTO student(sname,ssex,sage,sgrade,sphone,saddress,spname,spphone) VALUES ('"+name+"','"+gender+"'.'"+age+"','"+grade+"','"+phoneNumber+"','"+homeAddress+"','"+parentName+"','"+parentPhoneNumber+"')";
+            String q="INSERT INTO student(sname,sgender,sage,sgrade,sphone,saddress,spname,spphone) VALUES ('"+ name +"','"+ gender +"','"+ age +"','"+ grade +"','"+ phoneNumber +"','"+ homeAddress +"','"+ parentName +"','"+ parentPhoneNumber +"')";
             pst=con.prepareStatement(q);
+            pst.execute();
             
         }catch(Exception e){
             System.out.println(e);
@@ -222,12 +234,6 @@ public class addmember extends javax.swing.JInternalFrame {
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void femaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_femaleActionPerformed
-         if(female.isSelected()){
-                male.setSelected(false);
-        }
-        }//GEN-LAST:event_femaleActionPerformed
 
     private void nameboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameboxActionPerformed
         // TODO add your handling code here:
@@ -243,6 +249,13 @@ public class addmember extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_maleActionPerformed
 
+    private void femaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_femaleActionPerformed
+        if(female.isSelected()){
+            male.setSelected(false);
+        }
+            // TODO add your handling code here:
+    }//GEN-LAST:event_femaleActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea addressbox;
@@ -250,6 +263,7 @@ public class addmember extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton female;
     private javax.swing.JComboBox<String> gradebox;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -257,10 +271,10 @@ public class addmember extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JRadioButton male;
     private javax.swing.JTextField namebox;
     private javax.swing.JTextField parentnbox;
