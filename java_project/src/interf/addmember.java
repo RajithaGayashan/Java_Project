@@ -197,14 +197,28 @@ public class addmember extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String name=namebox.getText();
-        String selection=null;
+        String gender=null;
         if(male.isSelected()){
-            selection="Male is selected";
+            gender="Male is selected";
         }
         if(female.isSelected()){
-            selection="Female is selected";
+            gender="Female is selected";
         }
-        System.out.println(selection);
+        //System.out.println(selection);
+        String age=agebox.getText();
+        String grade=gradebox.getSelectedItem().toString();
+        String phoneNumber=phonebox.getText();
+        String homeAddress=addressbox.getText();
+        String parentName=parentnbox.getText();
+        String parentPhoneNumber=parentpnumbox.getText();
+        
+        try{
+            String q="INSERT INTO student(sname,ssex,sage,sgrade,sphone,saddress,spname,spphone) VALUES ('"+name+"','"+gender+"'.'"+age+"','"+grade+"','"+phoneNumber+"','"+homeAddress+"','"+parentName+"','"+parentPhoneNumber+"')";
+            pst=con.prepareStatement(q);
+            
+        }catch(Exception e){
+            System.out.println(e);
+        }
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
