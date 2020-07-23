@@ -295,8 +295,31 @@ public class addmember extends javax.swing.JInternalFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int r=jTable1.getSelectedRow();
         String id=jTable1.getValueAt(r, 0).toString();
+        String name=jTable1.getValueAt(r,1).toString();
+        String gender=jTable1.getValueAt(r,2).toString();
+        String age=jTable1.getValueAt(r,3).toString();
+        String grade=jTable1.getValueAt(r,4).toString();
+        String phoneNumber=jTable1.getValueAt(r, 5).toString();
+        String homeAddress=jTable1.getValueAt(r,6).toString();
+        String parentName=jTable1.getValueAt(r,7).toString();
+        String parentPhoneNumber=jTable1.getValueAt(r,8).toString();
         
-
+        
+        namebox.setText(name);
+        if(gender.equals("Male")){
+            male.setSelected(true);
+        }
+        else{
+            female.setSelected(true);
+        }
+        agebox.setText(age);
+        gradebox.setSelectedItem(grade);
+        phonebox.setText(phoneNumber);
+        addressbox.setText(homeAddress);
+        parentnbox.setText(parentName);
+        parentpnumbox.setText(parentPhoneNumber);
+        
+     
     }//GEN-LAST:event_jTable1MouseClicked
 
 
