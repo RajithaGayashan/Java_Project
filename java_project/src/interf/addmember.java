@@ -83,7 +83,7 @@ public class addmember extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Parent's name");
 
-        jLabel9.setText("                     STUDENT INFORMATION");
+        jLabel9.setText("                     STUDENT REGISTER");
 
         jLabel11.setText("Parent's phone number");
 
@@ -175,13 +175,13 @@ public class addmember extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel11)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5)
                             .addComponent(jLabel2)
-                            .addComponent(dsfds))
-                        .addGap(64, 64, 64)
+                            .addComponent(dsfds)
+                            .addComponent(jLabel8))
+                        .addGap(106, 106, 106)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(idbox)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -201,10 +201,10 @@ public class addmember extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 841, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton2)
-                        .addGap(412, 412, 412))))
+                        .addGap(414, 414, 414))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8)
+                .addComponent(jLabel11)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -245,20 +245,19 @@ public class addmember extends javax.swing.JInternalFrame {
                             .addComponent(jLabel3))
                         .addGap(12, 12, 12))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(parentnbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(parentnbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(parentpnumbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(7, 7, 7)
-                        .addComponent(jButton1))
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                    .addComponent(jLabel11)
+                    .addComponent(parentpnumbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -357,7 +356,31 @@ public class addmember extends javax.swing.JInternalFrame {
         int x=JOptionPane.showConfirmDialog(null,"Do you really want to update");
         
         if(x==0){
-            String id=
+            String id=idbox.getText();
+            String name=namebox.getText();
+            String gender=null;
+            if(male.isSelected()){
+                gender="Male";
+            }
+            if(female.isSelected()){
+                gender="Female";
+            }
+            String age=agebox.getText();
+            String grade=gradebox.getSelectedItem().toString();
+            String phoneNumber=phonebox.getText();
+            String homeAddress=addressbox.getText();
+            String parentName=parentnbox.getText();
+            String parentPhoneNumber=parentpnumbox.getText();
+            
+            String sql="UPDATE student SET sname='"+ name +"',sgender='"+ gender +"',sage='"+ age +"',sgrade='"+ grade +"',sphone='"+ phoneNumber +"',saddress='"+ homeAddress +"',spname='"+ parentName +"',spphone='"+ parentPhoneNumber +"' WHERE sid='"+ id +"'";
+            try{
+                pst=con.prepareStatement(sql);
+                pst.execute();
+                tableload();
+            }catch(Exception e){
+                System.out.println(e);
+            }
+
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
